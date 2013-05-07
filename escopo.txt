@@ -1,0 +1,7 @@
+Artista
+local
+figura
+
+Qualquer pessoa pode adicionar uma figura.
+Qualquer pessoa pode adicionar um local.
+A propria pessoa pode se cadastrar.

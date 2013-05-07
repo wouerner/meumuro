@@ -7321,6 +7321,12 @@ class SessionServiceProvider extends ServiceProvider
      */
     protected function registerCloseEvent()
     {
+        if ($this->getDriver() == 'array') {
+            return;
+        }
+        // The cookie toucher is responsbile for updating the expire time on the cookie
+        // so that it is refreshed for each page load. Otherwise it is only set here
+        // once by PHP and never updated on each subsequent page load of the apps.
         $this->registerCookieToucher();
         $app = $this->app;
         $this->app->close(function () use($app) {
@@ -7361,6 +7367,15 @@ class SessionServiceProvider extends ServiceProvider
     protected function getExpireTime($config)
     {
         return $config['lifetime'] == 0 ? 0 : time() + $config['lifetime'] * 60;
+    }
+    /**
+     * Get the session driver name.
+     *
+     * @return string
+     */
+    protected function getDriver()
+    {
+        return $this->app['config']['session.driver'];
     }
 }
 namespace Illuminate\View;
@@ -15551,9 +15566,14 @@ class Environment
      * @param  mixed   $value
      * @return void
      */
-    public function share($key, $value)
+    public function share($key, $value = null)
     {
-        $this->shared[$key] = $value;
+        if (!is_array($key)) {
+            return $this->shared[$key] = $value;
+        }
+        foreach ($key as $innerKey => $innerValue) {
+            $this->share($innerKey, $innerValue);
+        }
     }
     /**
      * Register a view composer event.
