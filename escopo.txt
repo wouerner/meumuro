@@ -3,5 +3,6 @@ local
 figura
 
 Qualquer pessoa pode adicionar uma figura.
+Uma figura pode ter mais de um artista.
 Qualquer pessoa pode adicionar um local.
 A propria pessoa pode se cadastrar.

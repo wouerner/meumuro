@@ -4,6 +4,7 @@ use View;
 use Artista;
 use Input;
 use Redirect;
+use Confide;
 
 class ArtistaController extends BaseController {
 
@@ -42,6 +43,7 @@ class ArtistaController extends BaseController {
 		$data = Input::all();
 		$artista = new Artista();
 		$artista->nome = $data['nome'];
+		$artista->user_id = Confide::user()->id;
 		$artista->save();
 		return Redirect::to('/artista');
 	}

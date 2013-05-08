@@ -26,6 +26,16 @@ class User extends ConfideUser {
 	 *
 	 * @return mixed
 	 */
+	public function artista()
+	{
+		return $this->hasOne('Artista');
+	}
+
+	/**
+	 * Get the unique identifier for the user.
+	 *
+	 * @return mixed
+	 */
 	public function getAuthIdentifier()
 	{
 		return $this->getKey();

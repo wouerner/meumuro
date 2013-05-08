@@ -15,6 +15,9 @@
 //      Route::get('/art', array(
 //        'uses' => 'artista\\ArtistaController@index2'
 //      ));
+Route::get( '/',function () {
+   return View::make('principal');
+});
 
 //resourcefull controller
 Route::resource('artista', 'artista\\ArtistaController');
@@ -53,3 +56,5 @@ Route::post('user/forgot_password',        'UserController@do_forgot_password');
 Route::get( 'user/reset_password/{token}', 'UserController@reset_password');
 Route::post('user/reset_password',         'UserController@do_reset_password');
 Route::get( 'user/logout',                 'UserController@logout');
+//custom
+Route::get( 'user/dashboard',                 'UserController@dashboard');

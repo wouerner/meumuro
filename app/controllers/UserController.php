@@ -8,7 +8,7 @@
 | authentication. Feel free to change to your needs.
 |
 */
-
+//use Confide;
 class UserController extends BaseController {
 
     /**
@@ -102,7 +102,7 @@ class UserController extends BaseController {
                 return Redirect::to($r);
             }
             
-            return Redirect::to('/artista'); // change it to '/admin', '/dashboard' or something
+            return Redirect::to('/user/dashboard'); // change it to '/admin', '/dashboard' or something
         }
         else
         {
@@ -220,6 +220,23 @@ class UserController extends BaseController {
         Confide::logout();
         
         return Redirect::to('/');
+    }
+
+    /**
+     * Log the user out of the application.
+     *
+     */
+    public function dashboard()
+    {
+
+				$artista_id = Confide::user()->artista()->first()->id ;  
+				//$figuras = $artista->figura()->first() ;  
+				$figuras = Figura::where('artista_id','=',$artista_id)->get();
+				//die();
+				//var_dump($figuras->id);die();
+
+				return View::make('dashboard')
+								->with('figuras', $figuras);
     }
 
 }

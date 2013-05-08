@@ -1,7 +1,8 @@
 {
 	"require": {
 		"laravel/framework": "4.0.*",
-    "zizaco/confide": "dev-master"
+    "zizaco/confide": "dev-master",
+    "zizaco/entrust": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

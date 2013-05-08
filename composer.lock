@@ -3,8 +3,82 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "23c0c1cc29f921879a9ffb85500987ce",
+    "hash": "3993989d8d271e9320dc9a0fb4ab9bb8",
     "packages": [
+        {
+            "name": "anahkiasen/html-object",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Anahkiasen/html-object.git",
+                "reference": "d40a3f2eff1e1d73f6f069e5b166fe4447c44989"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Anahkiasen/html-object/zipball/d40a3f2eff1e1d73f6f069e5b166fe4447c44989",
+                "reference": "d40a3f2eff1e1d73f6f069e5b166fe4447c44989",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HtmlObject": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Fabre",
+                    "email": "ehtnam6@gmail.com"
+                }
+            ],
+            "description": "A set of classes to create and manipulate HTML objects abstractions",
+            "time": "2013-04-14 19:56:47"
+        },
+        {
+            "name": "anahkiasen/underscore-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Anahkiasen/underscore-php.git",
+                "reference": "ecadd0ba7256ab696e1789433def50657ee596fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Anahkiasen/underscore-php/zipball/ecadd0ba7256ab696e1789433def50657ee596fb",
+                "reference": "ecadd0ba7256ab696e1789433def50657ee596fb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.0.*@dev",
+                "patchwork/utf8": "1.1.*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Underscore": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Fabre",
+                    "email": "ehtnam6@gmail.com"
+                }
+            ],
+            "description": "A redacted port of Underscore.js for PHP",
+            "time": "2013-04-18 17:46:08"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "dev-master",
@@ -656,12 +730,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0760515e5da32580c236130077f915d1bf1d3def"
+                "reference": "105ded9b75844ac23cd8567a1740bfe5e6e3ed40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0760515e5da32580c236130077f915d1bf1d3def",
-                "reference": "0760515e5da32580c236130077f915d1bf1d3def",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/105ded9b75844ac23cd8567a1740bfe5e6e3ed40",
+                "reference": "105ded9b75844ac23cd8567a1740bfe5e6e3ed40",
                 "shasum": ""
             },
             "require": {
@@ -758,7 +832,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-05-06 22:05:23"
+            "time": "2013-05-08 14:02:27"
         },
         {
             "name": "laravelbook/ardent",
@@ -1832,6 +1906,50 @@
             "time": "2013-05-05 17:11:25"
         },
         {
+            "name": "vespakoen/menu",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Vespakoen/laravel-menu.git",
+                "reference": "1190ffd59cfab6710c969bd5496db6657ebbd302"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Vespakoen/laravel-menu/zipball/1190ffd59cfab6710c969bd5496db6657ebbd302",
+                "reference": "1190ffd59cfab6710c969bd5496db6657ebbd302",
+                "shasum": ""
+            },
+            "require": {
+                "anahkiasen/html-object": "dev-master",
+                "anahkiasen/underscore-php": "dev-master",
+                "illuminate/config": "4.0.*",
+                "illuminate/http": "4.0.*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Menu": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Koen Schmeets",
+                    "email": "hello@koenschmeets.nl"
+                }
+            ],
+            "description": "Managing menu's the easy way.",
+            "keywords": [
+                "laravel",
+                "menu"
+            ],
+            "time": "2013-04-30 11:27:52"
+        },
+        {
             "name": "zizaco/confide",
             "version": "dev-master",
             "source": {
@@ -1893,12 +2011,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Zizaco/entrust.git",
-                "reference": "b1f6223827fc2a9b34df91b15378593d4cd30840"
+                "reference": "31b5a966197c32ae7909382686ffb0cc9e473937"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Zizaco/entrust/zipball/b1f6223827fc2a9b34df91b15378593d4cd30840",
-                "reference": "b1f6223827fc2a9b34df91b15378593d4cd30840",
+                "url": "https://api.github.com/repos/Zizaco/entrust/zipball/31b5a966197c32ae7909382686ffb0cc9e473937",
+                "reference": "31b5a966197c32ae7909382686ffb0cc9e473937",
                 "shasum": ""
             },
             "require": {
@@ -1940,7 +2058,7 @@
                 "laravel",
                 "roles"
             ],
-            "time": "2013-05-07 05:24:32"
+            "time": "2013-05-07 19:51:24"
         }
     ],
     "packages-dev": [
@@ -1952,7 +2070,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "zizaco/confide": 20,
-        "zizaco/entrust": 20
+        "zizaco/entrust": 20,
+        "vespakoen/menu": 20
     },
     "platform": [
 

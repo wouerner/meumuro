@@ -15,6 +15,9 @@
 //      Route::get('/art', array(
 //        'uses' => 'artista\\ArtistaController@index2'
 //      ));
+Route::get( '/',function () {
+   return View::make('principal');
+});
 
 //resourcefull controller
 Route::resource('artista', 'artista\\ArtistaController');
@@ -41,7 +44,6 @@ Route::resource('figura', 'figura\\FiguraController');
 //Route::get('profile', array('as' => 'profile', function () { }));
 
 //Route::get('login', array('as' => 'login', function () { }))->before('guest');
-
 
 // Confide routes
 Route::get( 'user/create',                 'UserController@create');

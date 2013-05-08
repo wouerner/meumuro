@@ -3,6 +3,7 @@ use Figura;
 use View;
 use Input;
 use Redirect;
+use Confide;
 
 class FiguraController extends \BaseController {
 
@@ -38,12 +39,26 @@ class FiguraController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
 		$data = Input::all();
 		$figura = new Figura();
+
 		$figura->nome = $data['nome'];
-		$figura->url = '/img';
+		//$artista = Confide::user()->artista()->first()->id ;
+		$figura->artista_id =Confide::user()->artista()->first()->id ;
+	//	var_dump($artista);die();
+		//var_dump($artista->find(6)->id);die();
 		$figura->save();
+
+		if (Input::hasFile('image'))
+       {
+           $mime = explode('/', Input::file('image')->getMimeType() );
+					 $filename = $figura->id . '.' . $mime[1] ;
+           $path = '/upload/' .$filename;
+					 $figura->image = $path;
+					 Input::file('image')->move(base_path().'/public/upload/', $filename) ;
+		       $figura->save();
+       }
+
 		return Redirect::to('/figura');
 	}
 
