@@ -5,6 +5,7 @@
 {{ Form::open(['url' => 'figura' , 'class' => 'form-inline' ,'files'=>true]) }}
 {{ Form::label('nome', 'Nome') }}
 {{ Form::text('nome') }}
+{{ Form::select('categoriaId', $categorias) }}
 {{ Form::file('image') }}
 {{ Form::submit('Criar',['class'=>'btn']) }}
 {{ Form::close() }}

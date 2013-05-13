@@ -1,15 +1,16 @@
 @extends('template')
 
 @section('conteudo')
-<h1>Edit: {{$figura->nome}}!</h1>
+<h1>Edit: {{$data['figura']->nome}}!</h1>
 {{ Form::open( [ 
-									'route'  => ['figura.update' , $figura->id], 
+									'route'  => ['figura.update' , $data['figura']->id], 
 									'method' => 'put' , 
 									'files'  => 'true'  
 								]) }}
 
 {{ Form::label('nome', 'Nome') }}
-{{ Form::text('nome',  $figura->nome  ) }}
+{{ Form::text('nome',  $data['figura']->nome  ) }}
+{{ Form::select('categoriaId', $data['categorias'], $data['figura']->categoria_id ) }}
 {{ Form::file('image') }}
 {{ Form::submit('salvar',array('class'=>'btn')) }}
 {{ Form::close() }}

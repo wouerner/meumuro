@@ -25,6 +25,9 @@ Route::resource('artista', 'artista\\ArtistaController');
 //rota para controller figura
 Route::resource('figura', 'figura\\FiguraController');
 
+//categorias
+Route::resource('categoria', 'figura\\FiguraCategoriaController');
+
 
 //user autentication route
 //Route::get('/', array('as' => 'home', function () {
@@ -56,3 +59,5 @@ Route::post('user/forgot_password',        'UserController@do_forgot_password');
 Route::get( 'user/reset_password/{token}', 'UserController@reset_password');
 Route::post('user/reset_password',         'UserController@do_reset_password');
 Route::get( 'user/logout',                 'UserController@logout');
+//custom
+Route::get( 'user/dashboard',                 'UserController@dashboard');

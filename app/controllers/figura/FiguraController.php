@@ -4,6 +4,7 @@ use View;
 use Input;
 use Redirect;
 use Confide;
+use CategoriaFigura;
 
 class FiguraController extends \BaseController {
 
@@ -29,7 +30,13 @@ class FiguraController extends \BaseController {
 	public function create()
 	{
 		//
-		return View::make('figura.create');
+		$categoria = new CategoriaFigura();
+		$categorias = $categoria::all();
+
+		foreach($categorias as $c){
+		   $data[ $c->id ] = $c->nome ;
+		}
+		return View::make('figura.create')->with('categorias',$data);
 	}
 
 	/**
@@ -41,12 +48,11 @@ class FiguraController extends \BaseController {
 	{
 		$data = Input::all();
 		$figura = new Figura();
+		var_dump($data);
 
 		$figura->nome = $data['nome'];
-		//$artista = Confide::user()->artista()->first()->id ;
+		$figura->categoria_id = $data['categoriaId'];
 		$figura->artista_id =Confide::user()->artista()->first()->id ;
-	//	var_dump($artista);die();
-		//var_dump($artista->find(6)->id);die();
 		$figura->save();
 
 		if (Input::hasFile('image'))
@@ -86,10 +92,20 @@ class FiguraController extends \BaseController {
 	public function edit($id)
 	{
 		//
+		$categoria = new CategoriaFigura();
+		$categorias = $categoria::all();
+
+		foreach($categorias as $c){
+		   $cats[ $c->id ] = $c->nome ;
+		}
+
 		$figura = new Figura();
 		$figura = $figura::find($id);
 
-		return View::make('figura.edit')->with('figura', $figura);
+		var_dump($figura->categoria_id);
+
+		return View::make('figura.edit')->with('data', array('figura'=>$figura,
+						                                              'categorias'=>$cats));
 	}
 
 	/**
@@ -104,6 +120,7 @@ class FiguraController extends \BaseController {
 		$figura = new Figura();
 		$figura = $figura::find($id);
 		$figura->nome = Input::get('nome');
+		$figura->categoria_id = Input::get('categoriaId');
 		$figura->save();
 
 		if (Input::hasFile('image'))

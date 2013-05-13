@@ -6,3 +6,5 @@ Qualquer pessoa pode adicionar uma figura.
 Uma figura pode ter mais de um artista.
 Qualquer pessoa pode adicionar um local.
 A propria pessoa pode se cadastrar.
+
+o usuario procura as figuras por categoria ou por nome/

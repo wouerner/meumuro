@@ -8,4 +8,8 @@ public $timestamps = false;
    {
         return $this->belongsTo('Artista');
    }
+	 public function categoria()
+   {
+        return $this->belongsTo('CategoriaFigura');
+   }
 }

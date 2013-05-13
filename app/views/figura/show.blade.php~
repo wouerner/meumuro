@@ -16,7 +16,7 @@
 		    <td>{{ $figura->id }}</td>
 		    <td>{{ $figura->nome }}</td>
 		    <td><img src="{{ $figura->image }}"></td>
-				<td><a class = "btn btn-mini" href="{{ route('artista.edit', ['artista'=>$artista->id]) }}"><i class = "icon-edit" ></i> Editar</a></td>
+				<td><a class = "btn btn-mini" href="{{ route('figura.edit', ['figura'=>$figura->id]) }}"><i class = "icon-edit" ></i> Editar</a></td>
 			</tr>
 		</table>
 

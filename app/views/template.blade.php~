@@ -23,14 +23,12 @@
 }}
 
 <?php if (isset(Confide::user()->username)): ?>
-<li class = "dropdown" >
 {{
  Menu::handler('user',['class'=>'nav pull-right'])
 				->add('user/profile',Confide::user()->username,null,['class' => 'menu','data-toggle' => 'menu' ])
 				->add('user/logout','Sair '.Confide::user()->username,null,['class' => 'menu'])
 
 }}
-</li>
 <?php else : ?>
 {{ Menu::handler('login',['class'=>'nav pull-right'])
         ->add('user/login','Login',null,['class' => 'menu']) }}

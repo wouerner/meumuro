@@ -25,6 +25,9 @@ Route::resource('artista', 'artista\\ArtistaController');
 //rota para controller figura
 Route::resource('figura', 'figura\\FiguraController');
 
+//categorias
+Route::resource('categoria', 'figura\\FiguraCategoriaController');
+
 
 //user autentication route
 //Route::get('/', array('as' => 'home', function () {

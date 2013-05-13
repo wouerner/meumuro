@@ -20,6 +20,7 @@
         ->add('/','home',null,['class' => 'menu'])
         ->add('/user/dashboard','Dashboard',null,['class' => 'menu'])
         ->add('/figura/create','Upload',null,['class' => 'menu'])
+        ->add('/categoria','Categorias',null,['class' => 'menu'])
 }}
 
 <?php if (isset(Confide::user()->username)): ?>
