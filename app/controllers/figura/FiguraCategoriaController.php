@@ -63,7 +63,9 @@ class FiguraCategoriaController extends \BaseController {
 
 
 
-		$figuras = Figura::where('categoria_id','=',$id)->get();
+		$figuras = Figura::where('categoria_id','=',$id)->paginate(1)
+						   //->get()
+							 ;
 		//var_dump($figuras->first());
 		return View::make('categoria.show')->with('data', 
 						                              array('categoria'=>$categoria, 

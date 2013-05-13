@@ -19,5 +19,5 @@
 			</tr>
        @endforeach
 		</table>
-
+		{{ $data['figuras']->links() }}
 @stop
