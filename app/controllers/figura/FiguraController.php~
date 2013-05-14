@@ -102,7 +102,7 @@ class FiguraController extends \BaseController {
 		$figura = new Figura();
 		$figura = $figura::find($id);
 
-		var_dump($figura);
+		var_dump($figura->categoria_id);
 
 		return View::make('figura.edit')->with('data', array('figura'=>$figura,
 						                                              'categorias'=>$cats));

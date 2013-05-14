@@ -5,6 +5,7 @@ use Artista;
 use Input;
 use Redirect;
 use Confide;
+use Figura;
 
 class ArtistaController extends BaseController {
 
@@ -100,6 +101,19 @@ class ArtistaController extends BaseController {
 	public function destroy($id)
 	{
 		//
+	}
+
+	public function avaliar($id)
+	{
+		$data = Input::all();
+
+	  //$figura = Figura::find($id);
+	  $artista = Artista::find(Confide::user()->artista()->first()->id);
+
+	  $artista->opinioes()->attach(1,array('figura_id'=>$id,'opiniao'=>$data['opiniao'])) ;
+    var_dump($artista);die();
+
+		return Redirect::to('/artista');
 	}
 
 }

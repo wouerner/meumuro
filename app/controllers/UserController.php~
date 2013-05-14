@@ -17,7 +17,9 @@ class UserController extends BaseController {
      */
     public function create()
     {
-        return View::make(Config::get('confide::signup_form'));
+					
+						//return View::make('user.login');
+						return View::make(Config::get('confide::signup_form'));
     }
 
     /**
@@ -71,7 +73,8 @@ class UserController extends BaseController {
         }
         else
         {
-            return View::make(Config::get('confide::login_form'));
+            //return View::make(Config::get('confide::login_form'));
+						return View::make('user.login');
         }
     }
 
@@ -231,12 +234,13 @@ class UserController extends BaseController {
 
 				$artista_id = Confide::user()->artista()->first()->id ;  
 				//$figuras = $artista->figura()->first() ;  
-				$figuras = Figura::where('artista_id','=',$artista_id);
+				$figuras = Figura::where('artista_id','=',$artista_id)->get();
+				$gostei = Artista::find($artista_id);
 				//die();
 				//var_dump($figuras->id);die();
 
 				return View::make('dashboard')
-								->with('figuras', $figuras);
+								->with('figuras', $figuras)->with('gostei',$gostei);
     }
 
 }

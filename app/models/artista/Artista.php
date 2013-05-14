@@ -14,4 +14,8 @@ class Artista extends Eloquent
    {
         return $this->belongsTo('User');
    }
+	 public function opinioes()
+   {
+        return $this->belongsToMany('Figura','opinioes');
+   }
 }

@@ -1,8 +1,8 @@
 @extends('template')
 
 @section('conteudo')
-<h1>Index</h1>
 <h1>Categorias</h1>
+<a class = "btn btn-success" href="{{ route('categoria.create') }}"> Nova</a>
 		<table class = "table" >
 			<thead>
        <th>Id</th>

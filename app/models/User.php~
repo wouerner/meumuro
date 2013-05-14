@@ -31,6 +31,11 @@ class User extends ConfideUser {
 		return $this->hasOne('Artista');
 	}
 
+	 public function opnioes()
+   {
+        return $this->belongsToMany('figuras');
+   }
+
 	/**
 	 * Get the unique identifier for the user.
 	 *

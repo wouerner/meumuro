@@ -12,4 +12,8 @@ public $timestamps = false;
    {
         return $this->belongsTo('CategoriaFigura');
    }
+	 public function opinioes()
+   {
+        return $this->belongsToMany('Artista','opnioes')->withPivot('opniao');
+   }
 }

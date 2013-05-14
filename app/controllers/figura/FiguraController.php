@@ -79,7 +79,6 @@ class FiguraController extends \BaseController {
 		//
 		$figura = new Figura();
 		$figura = $figura::find($id);
-		var_dump($figura);
 		return View::make('figura.show')->with('figura', $figura);
 	}
 
